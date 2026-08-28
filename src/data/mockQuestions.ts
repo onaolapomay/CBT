@@ -1,0 +1,98 @@
+import type { Question } from "../types/exam";
+
+export const mockQuestions: Question[] = [
+  {
+    id: 1,
+    question:
+      "If the roots of x² - 5x + 6 = 0 are α and β, what is α + β?",
+    options: ["2", "3", "5", "6"],
+    correctAnswer: 2,
+    selectedAnswer: null,
+    subject: "Mathematics",
+    topic: "Algebra",
+    type: "compulsory",
+    isMarkedForReview: false,
+  },
+  {
+    id: 2,
+    question:
+      "Which of the following is the derivative of x² with respect to x?",
+    options: ["x", "2x", "x²", "2"],
+    correctAnswer: 1,
+    selectedAnswer: null,
+    subject: "Mathematics",
+    topic: "Calculus",
+    type: "normal",
+    isMarkedForReview: false,
+  },
+  {
+    id: 3,
+    question:
+      "What is the probability of getting a head when a fair coin is tossed once?",
+    options: ["1/4", "1/2", "1/3", "1"],
+    correctAnswer: 1,
+    selectedAnswer: null,
+    subject: "Mathematics",
+    topic: "Probability",
+    type: "compulsory",
+    isMarkedForReview: false,
+  },
+  {
+    id: 4,
+    question:
+      "Simplify the expression 2(x + 3) - 4.",
+    options: ["2x + 2", "2x + 6", "2x - 2", "x + 2"],
+    correctAnswer: 0,
+    selectedAnswer: null,
+    subject: "Mathematics",
+    topic: "Algebra",
+    type: "follow-up",
+    isMarkedForReview: false,
+  },
+  {
+    id: 5,
+    question: "What is sin 90°?",
+    options: ["0", "1/2", "1", "√3/2"],
+    correctAnswer: 2,
+    selectedAnswer: null,
+    subject: "Mathematics",
+    topic: "Trigonometry",
+    type: "follow-up",
+    isMarkedForReview: false,
+  },
+  {
+    id: 6,
+    question:
+      "If a = 4 and b = 3, what is √(a² + b²)?",
+    options: ["5", "6", "7", "12"],
+    correctAnswer: 0,
+    selectedAnswer: null,
+    subject: "Mathematics",
+    topic: "Geometry",
+    type: "normal",
+    isMarkedForReview: false,
+  },
+  {
+    id: 7,
+    question:
+      "Which of these numbers is a prime number?",
+    options: ["21", "27", "29", "33"],
+    correctAnswer: 2,
+    selectedAnswer: null,
+    subject: "Mathematics",
+    topic: "Number Theory",
+    type: "compulsory",
+    isMarkedForReview: false,
+  },
+  {
+    id: 8,
+    question: "What is 3² + 4²?",
+    options: ["12", "20", "25", "49"],
+    correctAnswer: 2,
+    selectedAnswer: null,
+    subject: "Mathematics",
+    topic: "Arithmetic",
+    type: "normal",
+    isMarkedForReview: false,
+  },
+];

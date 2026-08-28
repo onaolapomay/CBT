@@ -18,8 +18,6 @@ function MockExamPage() {
     const [showSubmitConfirmation, setShowSubmitConfirmation] =
       useState(false);
 
-      const [isSubmitted, setIsSubmitted] = useState(false);
-
   return (
     <main className="min-h-screen bg-slate-100">
       <ExamHeader
@@ -79,7 +77,6 @@ function MockExamPage() {
               type="button"
               onClick={() => {
                 setShowSubmitConfirmation(false);
-                setIsSubmitted(true);
             }}
               className="rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
             >

@@ -15,9 +15,6 @@ function MockExamPage() {
   const [questions, setQuestions] =
     useState<Question[]>(mockQuestions);
 
-    const [showSubmitConfirmation, setShowSubmitConfirmation] =
-      useState(false);
-
   return (
     <main className="min-h-screen bg-slate-100">
       <ExamHeader
@@ -32,7 +29,6 @@ function MockExamPage() {
             (question) => question.isMarkedForReview,
           ).length
         }
-        onSubmit={() => setShowSubmitConfirmation(true)}
       />
 
       <div className="mx-auto max-w-[1600px] px-6 py-8">

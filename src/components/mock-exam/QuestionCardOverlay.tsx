@@ -1,4 +1,4 @@
-import { GripVertical, CheckCircle2, Star } from "lucide-react";
+import { CheckCircle2, GripVertical, Star } from "lucide-react";
 
 import type { Question } from "../../types/exam";
 
@@ -43,21 +43,17 @@ export function QuestionCardOverlay({
           {question.topic}
         </span>
 
-        {question.status === "answered" && (
-          <span className="flex items-center gap-1.5 text-xs font-medium text-emerald-600">
-            <CheckCircle2 size={14} />
-            Answered
-          </span>
-        )}
-
-        {question.status === "review" && (
+        {question.isMarkedForReview ? (
           <span className="flex items-center gap-1.5 text-xs font-medium text-amber-600">
             <Star size={14} />
             Review
           </span>
-        )}
-
-        {question.status === "unanswered" && (
+        ) : question.selectedAnswer !== null ? (
+          <span className="flex items-center gap-1.5 text-xs font-medium text-emerald-600">
+            <CheckCircle2 size={14} />
+            Answered
+          </span>
+        ) : (
           <span className="text-xs font-medium text-slate-400">
             Unanswered
           </span>

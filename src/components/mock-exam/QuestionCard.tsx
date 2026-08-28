@@ -43,7 +43,6 @@ export function QuestionCard({
           : "border-slate-200 shadow-sm",
       ].join(" ")}
     >
-      {/* Top */}
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 text-sm font-bold text-white">
@@ -73,32 +72,26 @@ export function QuestionCard({
         </button>
       </div>
 
-      {/* Question */}
       <p className="mt-4 text-sm font-medium leading-6 text-slate-800">
         {question.question}
       </p>
 
-      {/* Bottom */}
       <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-3">
         <span className="rounded-md bg-slate-100 px-2 py-1 text-[11px] font-medium text-slate-500">
           {question.topic}
         </span>
 
-        {question.status === "answered" && (
-          <span className="flex items-center gap-1.5 text-xs font-medium text-emerald-600">
-            <CheckCircle2 size={14} />
-            Answered
-          </span>
-        )}
-
-        {question.status === "review" && (
+        {question.isMarkedForReview ? (
           <span className="flex items-center gap-1.5 text-xs font-medium text-amber-600">
             <Star size={14} />
             Review
           </span>
-        )}
-
-        {question.status === "unanswered" && (
+        ) : question.selectedAnswer !== null ? (
+          <span className="flex items-center gap-1.5 text-xs font-medium text-emerald-600">
+            <CheckCircle2 size={14} />
+            Answered
+          </span>
+        ) : (
           <span className="text-xs font-medium text-slate-400">
             Unanswered
           </span>

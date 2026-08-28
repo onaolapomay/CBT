@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DndContext, DragOverlay, PointerSensor, useSensor, useSensors, } from "@dnd-kit/core";
+import { DndContext, DragOverlay, PointerSensor, TouchSensor, useSensor, useSensors, } from "@dnd-kit/core";
 import type { DragEndEvent, DragStartEvent } from "@dnd-kit/core";
 import { SortableContext, arrayMove, verticalListSortingStrategy, } from "@dnd-kit/sortable";
 import type { Dispatch, SetStateAction } from "react";
@@ -34,6 +34,12 @@ export function KanbanBoard({
         distance: 8,
       },
     }),
+    useSensor(TouchSensor, {
+    activationConstraint: {
+      delay: 150,
+      tolerance: 5,
+    },
+  }),
   );
 
   function handleDragStart(event: DragStartEvent) {

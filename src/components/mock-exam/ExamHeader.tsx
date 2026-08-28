@@ -31,7 +31,7 @@ export function ExamHeader({
 
   return (
     <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-6 px-6 py-4">
+      <div className="mx-auto flex max-w-[1600px] flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:justify-between md:px-6">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
             CBT Mock Examination
@@ -42,7 +42,7 @@ export function ExamHeader({
           </h1>
         </div>
 
-        <div className="flex flex-wrap items-center justify-end gap-4">
+        <div className="flex flex-wrap items-center justify-end gap-4 md:gap-8">
           <div>
             <p className="text-xs text-slate-400">Questions</p>
             <p className="mt-0.5 text-sm font-semibold text-slate-800">

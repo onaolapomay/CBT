@@ -15,6 +15,11 @@ function MockExamPage() {
   const [questions, setQuestions] =
     useState<Question[]>(mockQuestions);
 
+    const [showSubmitConfirmation, setShowSubmitConfirmation] =
+      useState(false);
+
+      const [isSubmitted, setIsSubmitted] = useState(false);
+
   return (
     <main className="min-h-screen bg-slate-100">
       <ExamHeader
@@ -29,6 +34,7 @@ function MockExamPage() {
             (question) => question.isMarkedForReview,
           ).length
         }
+        onSubmit={() => setShowSubmitConfirmation(true)}
       />
 
       <div className="mx-auto max-w-[1600px] px-6 py-8">
@@ -47,6 +53,42 @@ function MockExamPage() {
           setQuestions={setQuestions}
         />
       </div>
+
+      {showSubmitConfirmation && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/40 p-4 backdrop-blur-sm">
+    <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
+      <h2 className="text-lg font-bold text-slate-900">
+        Submit Exam?
+      </h2>
+
+      <p className="mt-2 text-sm leading-6 text-slate-500">
+        Are yousure you want to submit your exam? You
+        will not be able to change your answers afterwardss.
+      </p>
+
+      <div className="mt-6 flex justify-end gap-3">
+            <button
+              type="button"
+              onClick={() => setShowSubmitConfirmation(false)}
+              className="rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+            >
+              Cancel
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setShowSubmitConfirmation(false);
+                setIsSubmitted(true);
+            }}
+              className="rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
     </main>
   );
 }

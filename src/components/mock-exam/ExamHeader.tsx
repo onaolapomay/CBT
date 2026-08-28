@@ -5,12 +5,14 @@ interface ExamHeaderProps {
   totalQuestions: number;
   answeredQuestions: number;
   reviewQuestions: number;
+  onSubmit: () => void;
 }
 
 export function ExamHeader({
   totalQuestions,
   answeredQuestions,
   reviewQuestions,
+  onSubmit,
 }: ExamHeaderProps) {
   const [timeLeft, setTimeLeft] = useState(60 * 60);
 
@@ -40,7 +42,7 @@ export function ExamHeader({
           </h1>
         </div>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="flex flex-wrap items-center justify-end gap-4">
           <div>
             <p className="text-xs text-slate-400">Questions</p>
             <p className="mt-0.5 text-sm font-semibold text-slate-800">
@@ -79,6 +81,7 @@ export function ExamHeader({
 
           <button
             type="button"
+            onClick={onSubmit}
             className="flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
           >
             <Send size={15} />
